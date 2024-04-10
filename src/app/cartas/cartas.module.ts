@@ -6,7 +6,9 @@ import { CartaListagemComponent } from './carta-listagem/carta-listagem.componen
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    CartaListagemComponent
+  ],
   imports: [
     CommonModule,
     CartasRoutingModule

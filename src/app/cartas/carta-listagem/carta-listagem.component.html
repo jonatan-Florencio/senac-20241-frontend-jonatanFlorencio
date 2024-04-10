@@ -1,1 +1,23 @@
-<p>carta-listagem works!</p>
+<div>
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Força</th>
+        <th scope="col">Velocidade</th>
+        <th scope="col">Inteligência</th>
+        <th scope="col">Cadastrada em:</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr scope="row" *ngFor="let carta of cartas">
+          <td>{{ carta.nome }}</td>
+          <td>{{ carta.forca }}</td>
+          <td>{{ carta.velocidade }}</td>
+          <td>{{ carta.inteligencia }}</td>
+          <td>{{ carta.dataCadastro | date: 'dd/MM/yyyy' }}</td>
+        </tr>
+      </tbody>
+  </table>
+</div>
+
