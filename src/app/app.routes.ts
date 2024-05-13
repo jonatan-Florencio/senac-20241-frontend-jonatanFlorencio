@@ -1,11 +1,11 @@
 import {Routes } from '@angular/router';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'cartas', pathMatch: 'full'},
+  { path: '', redirectTo: 'carros', pathMatch: 'full'},
   {
-    path: 'cartas',
+    path: 'carros',
     loadChildren:() =>
-       import('./cartas/cartas.module').then(m => m.CartasModule)
+       import('./carros/carros.module').then(m => m.CarrosModule)
   }
 ];
 

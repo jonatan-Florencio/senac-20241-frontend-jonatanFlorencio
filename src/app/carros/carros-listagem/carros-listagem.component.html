@@ -1,0 +1,79 @@
+<pre>Seletor: {{ seletor | json}}</pre>
+<!--<pre>Países: {{ paises | json}}</pre> -->
+<pre>{{ seletor| json}}</pre>
+<div class="container">
+    <form>
+        <div class="card">
+            <div class="card-header text-white bg-primary">
+                <h4>Filtros</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label for="modeloCarro" class="form-label">Modelo:</label>
+                        <input type="text" class="form-control" name="modeloCarro">
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                      <label for="montadoraCarro" class="form-label">Montadora:</label>
+                      <input type="text" class="form-control" name="montadoraCarro">
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 form-group">
+                    <label for="anoCarro" class="form-label">Ano:</label>
+                    <input type="number" class="form-control" name="anoCarro">
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label for="placaCarro" class="form-label">Placa:</label>
+                        <input type="number" class="form-control" name="placaCarro">
+                    </div>
+                    <div class="col-md-3 form-group">
+                        <label for="valorCarro" class="form-label">Valor: R$</label>
+                        <input type="number" class="form-control" name="valorCarro">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <label for="btnPesquisar" class="form-label">&nbsp;</label>
+                        <button type="submit" class="btn btn-primary" name="btnPesquisar"
+                                (click)="pesquisar()">Pesquisar</button>
+                        <label for="btnLimpar" class="form-label">&nbsp;</label>
+                        <button type="submit" class="btn btn-warning"
+                                (click)="limpar()">Limpar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <h2 class="">Carros</h2>
+    <br><br>
+
+    <table class="table table-hover table-striped">
+        <thead>
+            <th>modelo</th>
+            <th>montadora</th>
+            <th>ano:</th>
+            <th>placa</th>
+            <th>valor</th>
+        </thead>
+        <tbody>
+            @for(carro of carros; track carros) {
+                <tr>
+                    <td>{{ carro.modelo }}</td>
+                    <td>{{ carro.montadora }}</td>
+                    <td>{{ carro.ano }}</td>
+                    <td>{{ carro.placa}}</td>
+                    <td>R${{ carro.valor }}</td>
+                    <td>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
